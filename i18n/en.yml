@@ -1,15 +1,18 @@
 authors:
+  all: All authors
   discover: Discover author
   title:
     one: Author
     other: Authors
 categories:
   all: All categories
+  discover: Discover categories
   title:
     one: Category
     other: Categories
 posts:
   all: All news
+  discover: Discover new
   latest: Latest news
   latest_person: Latest news of {{ .Person }}
   list: List of news by the author
@@ -20,3 +23,9 @@ posts:
     one: New
     other: News
   title_person: News of {{ .Person }}
+tags:
+  all: All tags
+  discover: Discover tag
+  title:
+    one: Tag
+    other: Tags
