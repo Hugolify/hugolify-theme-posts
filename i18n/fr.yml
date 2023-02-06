@@ -1,10 +1,12 @@
 authors:
+  all: Tous les auteurs
   discover: Découvrir l’auteur
   title:
     one: Auteur
     other: Auteurs
 categories:
   all: Toutes les catégories
+  discover: Découvrir la catégorie
   title:
     one: Catégorie
     other: Catégories
@@ -20,3 +22,9 @@ posts:
     one: Actualité
     other: Actualités
   title_person: Actualités de {{ .Person }}
+tags:
+  all: Tous les tags
+  discover: Découvrir le tag
+  title:
+    one: Tag
+    other: Tags
