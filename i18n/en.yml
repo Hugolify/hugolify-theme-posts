@@ -1,0 +1,22 @@
+authors:
+  discover: Discover author
+  title:
+    one: Author
+    other: Authors
+categories:
+  all: All categories
+  title:
+    one: Category
+    other: Categories
+posts:
+  all: All news
+  latest: Latest news
+  latest_person: Latest news of {{ .Person }}
+  list: List of news by the author
+  list_person: "{{ .Person }}’s news"
+  more: Discover more news
+  more_person: More news by {{ .Person }}
+  title:
+    one: New
+    other: News
+  title_person: News of {{ .Person }}
