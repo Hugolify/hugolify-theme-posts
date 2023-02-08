@@ -1,5 +1,14 @@
 <div class="content">
-  {{ partial "posts/filters/categories" . }}
-  {{ partial "posts/filters/tags" . }}
-  {{ partial "posts/filters/authors" . }}
+  {{ $categories := "posts/filters/categories.html" }}
+  {{ if templates.Exists ( printf "partials/%s" $categories ) }}
+    {{ partial $categories . }}
+  {{ end }}
+  {{ $tags := "posts/filters/tags.html" }}
+  {{ if templates.Exists ( printf "partials/%s" $tags ) }}
+    {{ partial $tags . }}
+  {{ end }}
+  {{ $authors := "posts/filters/authors.html" }}
+  {{ if templates.Exists ( printf "partials/%s" $authors ) }}
+    {{ partial $authors . }}
+  {{ end }}
 </div>
