@@ -16,7 +16,7 @@
     {{ end }}
 
     {{ with .Params.categories }}
-      {{ $category := partial "GetTaxonomy" (dict "slug" . "taxonomy" "categories")  }}
+      {{ $category := partial "func/GetTaxonomy" (dict "slug" . "taxonomy" "categories")  }}
       {{ with $category }}
         "articleSection": {{ .Title | plainify | safeHTML }},
       {{ end }}
@@ -31,13 +31,13 @@
     {{ end }}
 
     {{ with .Params.authors }}
-      {{ $author := partial "GetTaxonomy" (dict "slug" . "taxonomy" "authors")  }}
+      {{ $author := partial "func/GetTaxonomy" (dict "slug" . "taxonomy" "authors")  }}
       {{ with $author }}
         "author": {
           "@type": "Person",
           "name": {{ .Title | plainify | safeHTML }},
           {{ with .Description }}
-            "description": {{ partial "TruncateContent" (dict "content" (partial "PrepareHTML" .)) }},
+            "description": {{ partial "func/TruncateContent" (dict "content" (partial "func/PrepareHTML" .)) }},
           {{ end }}
           "url": {{ .Permalink }}
         }
