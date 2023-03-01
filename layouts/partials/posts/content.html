@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content"{{ partial "func/SetAnim" (dict "element" "content") }}>
   {{ partial "posts/featured-image" . }}
   {{ partial "posts/body" . }}
   {{ $tags := "posts/tags.html" }}
