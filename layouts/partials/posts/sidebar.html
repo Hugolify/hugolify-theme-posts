@@ -1,6 +1,8 @@
+{{ if isset .Params "authors" }}
 <div class="sidebar"{{ partial "func/SetAnim" (dict "element" "sidebar") }}>
   {{ $authors := "posts/authors.html" }}
   {{ if templates.Exists ( printf "partials/%s" $authors ) }}
     {{ partial $authors . }}
   {{ end }}
 </div>
+{{ end }}
