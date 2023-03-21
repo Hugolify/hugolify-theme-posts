@@ -1,6 +1,6 @@
-{{ $hasCategory := partial "func/isTaxonomyAvailable" (dict "pages" .Pages "taxonomy" "categories") }}
-{{ $hasTag := partial "func/isTaxonomyAvailable" (dict "pages" .Pages "taxonomy" "tags") }}
-{{ $hasAuthor := partial "func/isTaxonomyAvailable" (dict "pages" .Pages "taxonomy" "authors") }}
+{{ $hasCategory := partial "func/HasTaxonomyAvailable" (dict "section" "posts" "taxonomy" "categories") }}
+{{ $hasTag := partial "func/HasTaxonomyAvailable" (dict "section" "posts" "taxonomy" "tags") }}
+{{ $hasAuthor := partial "func/HasTaxonomyAvailable" (dict "section" "posts" "taxonomy" "authors") }}
 {{ if or $hasCategory $hasTag $hasAuthor }}
   <button class="btn-filter" type="button" data-bs-toggle="offcanvas" data-bs-target="#postsFilters" aria-controls="postsFilters">{{ i18n "filter" }}</button>
 {{ end }}
