@@ -2,7 +2,7 @@
 {{ $hasTag := partial "func/HasTaxonomyAvailable" (dict "section" "posts" "taxonomy" "tags") }}
 {{ $hasAuthor := partial "func/HasTaxonomyAvailable" (dict "section" "posts" "taxonomy" "authors") }}
 {{ if or $hasCategory $hasTag $hasAuthor }}
-<div class="filters offcanvas" tabindex="-1" id="postsFilters" aria-labelledby="postsFiltersLabel">
+  <div class="filters offcanvas" tabindex="-1" id="postsFilters" aria-labelledby="postsFiltersLabel">
     {{ partial "posts/filters/header" . }}
     {{ partial "posts/filters/content" . }}
   </div>
