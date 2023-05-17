@@ -13,7 +13,7 @@ module:
 params:
   posts:
     thumbnail:
-      desktop: "414x177"
+      desktop: "416x179"
       mobile: "300x129"
       scrollsnap: "240x103"
     image:
