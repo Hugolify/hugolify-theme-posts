@@ -2,47 +2,44 @@
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    {{ with .Title }}
-      "headline": {{ . | plainify | safeHTML }},
-      "name": {{ . | plainify | safeHTML }},
-    {{ end }}
+    {{- with .Title }}
+      "headline": {{ partial "func/PrepareData" . }},
+      "name": {{ partial "func/PrepareData" . }},
+    {{ end -}}
 
-    {{ with .Params.image }}
+    {{- with .Params.image }}
       "thumbnailUrl": {{ .src | absURL }},
-    {{ end }}
+    {{ end -}}
 
-    {{ with .Date }}
+    {{- with .Date }}
       "datePublished": {{ . }},
-    {{ end }}
+    {{ end -}}
 
-    {{ with .Params.categories }}
-      {{ $category := partial "func/GetTaxonomy" (dict "slug" . "taxonomy" "categories")  }}
-      {{ with $category }}
-        "articleSection": {{ .Title | plainify | safeHTML }},
-      {{ end }}
-    {{ end }}
+    {{- with .Description }}
+      "description": {{ partial "func/PrepareData" . }},
+    {{ end -}}
 
-    {{ with .Params.description }}
-      "description": {{ . | plainify | safeHTML }},
-    {{ end }}
+    {{- range .GetTerms "categories" }}
+      "articleSection": {{ partial "func/PrepareData" .Title }},
+    {{ end -}}
 
-    {{ with .Content }}
-      "articleBody": {{ . | plainify | safeHTML }},
-    {{ end }}
-
-    {{ with .Params.authors }}
-      {{ $author := partial "func/GetTaxonomy" (dict "slug" . "taxonomy" "authors")  }}
-      {{ with $author }}
+    {{- range .GetTerms "authors" }}
+      {{- $author :=  partial "func/GetRealPerson" . -}}
+      {{- with $author }}
         "author": {
           "@type": "Person",
-          "name": {{ .Title | plainify | safeHTML }},
-          {{ with .Description }}
-            "description": {{ partial "func/TruncateContent" (dict "content" (partial "func/PrepareHTML" .)) }},
+          "name": {{ partial "func/PrepareData" .Title }},
+          {{- with .Description }}
+            "description": {{ partial "func/PrepareData" . }},
           {{ end }}
           "url": {{ .Permalink }}
-        }
-      {{ end }}
-    {{ end }}
+        },
+      {{ end -}}
+    {{ end -}}
+
+    {{- with .Content }}
+      "articleBody": {{ partial "func/PrepareData" . }},
+    {{ end -}}
 
   }
 </script>
