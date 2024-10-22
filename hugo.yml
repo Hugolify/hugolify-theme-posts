@@ -13,7 +13,8 @@ module:
 params:
   admin:
     collections:
-      posts: true
+      posts:
+        enable: true
   posts:
     thumbnail:
       desktop: '416x179'
