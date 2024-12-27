@@ -25,3 +25,5 @@ params:
 # Default
 permalinks:
   posts: /news/:year-:month-:day-:slug/
+  section:
+    posts: /news/
