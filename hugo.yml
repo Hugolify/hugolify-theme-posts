@@ -16,7 +16,7 @@ params:
       posts:
         enable: true
         sortable: "[commit_date, title]"
-        summary: {{title}} - {{date | date('YYYY-MM-DD')}}
+        summary: "{{title}} - {{date | date('YYYY-MM-DD')}}"
   posts:
     thumbnail:
       desktop: '416x179'
