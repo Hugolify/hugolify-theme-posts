@@ -3,8 +3,8 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     {{- with .Title }}
-      "headline": {{ partial "func/PrepareData" . }},
-      "name": {{ partial "func/PrepareData" . }},
+      "headline": {{ partial "func/PrepareData.html" . }},
+      "name": {{ partial "func/PrepareData.html" . }},
     {{ end -}}
 
     {{- with .Params.image }}
@@ -16,11 +16,11 @@
     {{ end -}}
 
     {{- with .Description }}
-      "description": {{ partial "func/PrepareData" . }},
+      "description": {{ partial "func/PrepareData.html" . }},
     {{ end -}}
 
     {{- range .GetTerms "categories" }}
-      "articleSection": {{ partial "func/PrepareData" .Title }},
+      "articleSection": {{ partial "func/PrepareData.html" .Title }},
     {{ end -}}
 
     {{- range .GetTerms "authors" }}
@@ -28,9 +28,9 @@
       {{- with $author }}
         "author": {
           "@type": "Person",
-          "name": {{ partial "func/PrepareData" .Title }},
+          "name": {{ partial "func/PrepareData.html" .Title }},
           {{- with .Description }}
-            "description": {{ partial "func/PrepareData" . }},
+            "description": {{ partial "func/PrepareData.html" . }},
           {{ end }}
           "url": {{ .Permalink }}
         },
@@ -38,7 +38,7 @@
     {{ end -}}
 
     {{- with .Content }}
-      "articleBody": {{ partial "func/PrepareData" . }},
+      "articleBody": {{ partial "func/PrepareData.html" . }},
     {{ end -}}
 
   }
