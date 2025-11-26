@@ -19,7 +19,13 @@ params:
           - field: isIndex
             value: false
         icon:
-          sveltiacms: news
+          bootstrap_icons: newspaper
+          fontawesome: newspaper
+          iconoir: newspaper
+          material_icons: newspaper
+          material_symbols: news
+          lucide: newspaper
+          sveltiacms: news # legacy
         sortable: "[commit_date, title]"
         summary: "{{title}} - {{date | date('YYYY-MM-DD')}}"
   posts:
