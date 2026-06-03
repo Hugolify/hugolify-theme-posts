@@ -1,7 +1,7 @@
-/* css/posts.css — hugolify-theme-posts entry point */
+/* css/modules/posts.css — hugolify-theme-posts entry point */
 
 /* Tokens */
-@import '../tokens/post.css';
+@import '../tokens/posts.css';
 
 /* Components */
 @import '../components/post.css';
@@ -12,7 +12,7 @@
 @import '../pages/posts.css';
 
 /* Modules / Taxonomies */
-@import 'authors.css';
-@import 'categories.css';
-@import 'tags.css';
+@import 'posts-authors.css';
+@import 'posts-categories.css';
 @import 'posts-expertises.css';
+@import 'posts-tags.css';
