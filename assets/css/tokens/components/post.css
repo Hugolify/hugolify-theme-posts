@@ -1,0 +1,42 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* post.css */
+@layer tokens {
+  :root {
+    --post-border-radius: var(--item-border-radius);
+    --post-border-style: var(--item-border-style);
+    --post-border-width: var(--item-border-width);
+    --post-btn-border-width: var(--item-btn-border-width);
+    --post-btn-color-background: var(--item-btn-color-background);
+    --post-btn-color-text: var(--item-btn-color-text);
+    --post-btn-padding: var(--item-btn-padding);
+    --post-btn-text-decoration: var(--item-btn-text-decoration);
+    --post-btn-text-decoration-hover: var(--item-btn-text-decoration-hover);
+    --post-color-background: var(--item-color-background);
+    --post-color-border: var(--item-color-border);
+    --post-color-text: var(--item-color-text);
+    --post-color-text-muted: var(--item-color-text-muted);
+    --post-gap: var(--item-gap);
+    --post-media-color-background: var(--item-media-color-background);
+    --post-media-order: var(--item-media-order);
+    --post-media-ratio: var(--item-media-ratio);
+    --post-metas-border-end: var(--item-metas-border-end);
+    --post-metas-border-start: var(--item-metas-border-start);
+    --post-metas-color-background: var(--item-metas-color-background);
+    --post-metas-font-size: var(--item-metas-font-size);
+    --post-metas-order: var(--item-metas-order);
+    --post-metas-padding-inline: var(--item-metas-padding-inline);
+    --post-metas-padding-block-start: var(--item-metas-padding-block-start);
+    --post-metas-padding-block-end: var(--item-metas-padding-block-end);
+    --post-order: var(--item-order);
+    --post-padding-inline: var(--item-padding-inline);
+    --post-padding-block: var(--item-padding-block);
+    --post-shadow: var(--item-shadow);
+    --post-shadow-hover: var(--item-shadow-hover);
+    --post-title-color: var(--item-title-color);
+    --post-title-font-size: var(--item-title-font-size);
+    --post-title-font-weight: var(--item-title-font-weight);
+    --post-title-line-height: var(--item-title-line-height);
+    --post-transition: var(--item-transition);
+  }
+}

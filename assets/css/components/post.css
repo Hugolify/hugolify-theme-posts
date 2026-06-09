@@ -1,1 +1,58 @@
 /* components/post.css */
+/*
+ * .post remaps the full --item-* API (and the inner --btn-*) onto its
+ * --post-* tokens, so any value can be tuned from post.json without
+ * touching this file.
+ * Usage: <article class="item post">
+ */
+@layer components {
+  .post {
+    /* Box */
+    --item-color-background: var(--post-color-background);
+    --item-color-border: var(--post-color-border);
+    --item-color-text: var(--post-color-text);
+    --item-color-text-muted: var(--post-color-text-muted);
+    --item-border-radius: var(--post-border-radius);
+    --item-border-style: var(--post-border-style);
+    --item-border-width: var(--post-border-width);
+    --item-shadow: var(--post-shadow);
+    --item-shadow-hover: var(--post-shadow-hover);
+    --item-transition: var(--post-transition);
+
+    /* Content */
+    --item-gap: var(--post-gap);
+    --item-order: var(--post-order);
+    --item-padding-block: var(--post-padding-block);
+    --item-padding-inline: var(--post-padding-inline);
+
+    /* Title */
+    --item-title-color: var(--post-title-color);
+    --item-title-font-size: var(--post-title-font-size);
+    --item-title-font-weight: var(--post-title-font-weight);
+    --item-title-line-height: var(--post-title-line-height);
+
+    /* Metas */
+    --item-metas-border-end: var(--post-metas-border-end);
+    --item-metas-border-start: var(--post-metas-border-start);
+    --item-metas-color-background: var(--post-metas-color-background);
+    --item-metas-font-size: var(--post-metas-font-size);
+    --item-metas-order: var(--post-metas-order);
+    --item-metas-padding-block-end: var(--post-metas-padding-block-end);
+    --item-metas-padding-block-start: var(--post-metas-padding-block-start);
+    --item-metas-padding-inline: var(--post-metas-padding-inline);
+
+    /* Media */
+    --item-media-color-background: var(--post-media-color-background);
+    --item-media-order: var(--post-media-order);
+    --item-media-ratio: var(--post-media-ratio);
+
+    /* Inner button (--btn-* is the button component's own API) */
+    --btn-border-width: var(--post-btn-border-width);
+    --btn-color-background: var(--post-btn-color-background);
+    --btn-color-text: var(--post-btn-color-text);
+    --btn-color-text-decoration: var(--post-btn-text-decoration);
+    --btn-color-text-decoration-hover: var(--post-btn-text-decoration-hover);
+    --btn-padding-inline: var(--post-btn-padding);
+    --btn-padding-block: var(--post-btn-padding);
+  }
+}
