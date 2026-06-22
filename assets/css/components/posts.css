@@ -1,0 +1,12 @@
+/* components/posts.css */
+/*
+ * .posts remaps the full --items-* API onto its --posts-* tokens, so any
+ * value can be tuned from posts.json without touching this file.
+ * Usage: <article class="items posts">
+ */
+@layer components {
+  .posts {
+    --items-min-width: var(--posts-min-width);
+    --items-nav-margin-block-start: var(--posts-nav-margin-block-start);
+  }
+}

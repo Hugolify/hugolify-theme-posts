@@ -1,0 +1,9 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* posts.css */
+@layer tokens {
+  :root {
+    --posts-min-width: var(--items-min-width);
+    --posts-nav-margin-block-start: var(--items-nav-margin-block-start);
+  }
+}

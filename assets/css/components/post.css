@@ -1,0 +1,7 @@
+/* components/post.css */
+/*
+ * .post remaps the full --item-* API (and the inner --btn-*) onto its
+ * --post-* tokens, so any value can be tuned from post.json without
+ * touching this file.
+ * Usage: <article class="item post">
+ */

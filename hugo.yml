@@ -10,7 +10,10 @@ module:
       target: i18n
     - source: layouts
       target: layouts
+
 params:
+
+  # Hugolify admin
   admin:
     collections:
       posts:
@@ -24,15 +27,17 @@ params:
           material_icons: feed
           material_symbols: news
           lucide: sticky-note
-          sveltiacms: news # legacy
         sortable: "[commit_date, title]"
         summary: "{{title}} - {{date | date('YYYY-MM-DD')}}"
+  
+  # Image
   posts:
     thumbnail:
       desktop: '416x179'
       desktop_large: '636x273'
       mobile: '300x129'
       scrollsnap: '240x103'
+      sizes: 100vw, 50vw, 33vw
 
 # Default
 permalinks:
