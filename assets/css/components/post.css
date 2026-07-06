@@ -5,3 +5,10 @@
  * touching this file.
  * Usage: <article class="item post">
  */
+@layer components {
+  .post {
+    .btn {
+      display: none;
+    }
+  }
+}
