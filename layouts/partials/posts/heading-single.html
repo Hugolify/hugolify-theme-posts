@@ -1,6 +1,6 @@
-<header class="heading"{{ partial "func/SetAnim.html" (dict "element" "heading") }}>
-  {{ with .Title }}
+<header class="heading" {{- partial "func/SetAnim.html" (dict "element" "heading") }}>
+  {{- with .Title }}
     <h1>{{ partial "func/PrepareHTML.html" . }}</h1>
-  {{ end }}
-  {{ partial "posts/metas" . }}
+  {{- end }}
+  {{ partial "posts/metas.html" . }}
 </header>
