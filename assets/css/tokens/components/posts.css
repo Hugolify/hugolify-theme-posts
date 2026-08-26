@@ -3,7 +3,7 @@
 /* posts.css */
 @layer tokens {
   :root {
-    --posts-min-width: var(--items-min-width);
-    --posts-nav-margin-block-start: var(--items-nav-margin-block-start);
+    --posts-min-width: var(--max-width-item);
+    --posts-nav-margin-block-start: var(--spacing-fluid-md);
   }
 }
