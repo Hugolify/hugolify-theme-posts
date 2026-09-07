@@ -27,6 +27,8 @@ params:
           material_icons: feed
           material_symbols: news
           lucide: sticky-note
+        path: "{{year}}/{{month}}/{{slug}}"
+        slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
         sortable: "[commit_date, title]"
         summary: "{{title}} - {{date | date('YYYY-MM-DD')}}"
   
