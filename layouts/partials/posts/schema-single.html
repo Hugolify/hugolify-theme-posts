@@ -1,45 +1,28 @@
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    {{- with .Title }}
-      "headline": {{ partial "func/PrepareData.html" . }},
-      "name": {{ partial "func/PrepareData.html" . }},
-    {{ end -}}
+{{- /* Schema.org for a post: a BlogPosting, see func/GetSchemaArticle.html.
 
-    {{- with .Params.image }}
-      "thumbnailUrl": {{ .src | absURL }},
-    {{ end -}}
+       Written by its authors — the organization when it has none — filed under
+       its categories, tagged with its tags, about its expertises. Each of those
+       taxonomies ships as its own module, and is only read when the site
+       declares it. */ -}}
+{{- $authors := slice -}}
+{{- range partial "func/GetSchemaTerms.html" (dict "page" . "taxonomy" "authors" "format" "page") -}}
+  {{- $authors = $authors | append (partial "func/GetSchemaPerson.html" (dict "page" . "compact" true)) -}}
+{{- end -}}
 
-    {{- with .Date }}
-      "datePublished": {{ . }},
-    {{ end -}}
+{{- $article := partial "func/GetSchemaArticle.html" (dict "page" . "type" "BlogPosting" "author" $authors) -}}
+{{- with partial "func/GetSchemaTerms.html" (dict "page" . "taxonomy" "categories") -}}
+  {{- $article = merge $article (dict "articleSection" .) -}}
+{{- end -}}
+{{- with partial "func/GetSchemaTerms.html" (dict "page" . "taxonomy" "tags") -}}
+  {{- $article = merge $article (dict "keywords" .) -}}
+{{- end -}}
+{{- with partial "func/GetSchemaTerms.html" (dict "page" . "taxonomy" "posts_expertises" "format" "thing") -}}
+  {{- $article = merge $article (dict "about" .) -}}
+{{- end -}}
 
-    {{- with .Description }}
-      "description": {{ partial "func/PrepareData.html" . }},
-    {{ end -}}
+{{- $webpage := partial "func/GetSchemaWebPage.html" (dict
+  "page" .
+  "mainEntity" (dict "@id" (index $article "@id"))
+) -}}
 
-    {{- range .GetTerms "categories" }}
-      "articleSection": {{ partial "func/PrepareData.html" .Title }},
-    {{ end -}}
-
-    {{- range .GetTerms "authors" }}
-      {{- $author :=  partial "func/GetRealPerson" . -}}
-      {{- with $author }}
-        "author": {
-          "@type": "Person",
-          "name": {{ partial "func/PrepareData.html" .Title }},
-          {{- with .Description }}
-            "description": {{ partial "func/PrepareData.html" . }},
-          {{ end }}
-          "url": {{ .Permalink }}
-        },
-      {{ end -}}
-    {{ end -}}
-
-    {{- with .Content }}
-      "articleBody": {{ partial "func/PrepareData.html" . }},
-    {{ end -}}
-
-  }
-</script>
+{{- partial "commons/jsonld.html" (slice $webpage $article) -}}
