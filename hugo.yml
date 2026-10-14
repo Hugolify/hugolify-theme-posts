@@ -29,7 +29,7 @@ params:
           lucide: sticky-note
         path: "{{year}}/{{month}}/{{slug}}"
         slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-        sortable: "[commit_date, title]"
+        sortable_fields: [commit_date, title]
         summary: "{{title}} - {{date | date('YYYY-MM-DD')}}"
   
   # Image
