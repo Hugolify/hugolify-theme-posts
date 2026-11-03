@@ -36,7 +36,6 @@ params:
   posts:
     thumbnail:
       desktop: '416x179'
-      desktop_large: '636x273'
       mobile: '300x129'
       scrollsnap: '240x103'
       sizes: 100vw, 50vw, 33vw
