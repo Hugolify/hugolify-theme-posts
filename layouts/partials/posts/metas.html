@@ -2,7 +2,7 @@
   {{ partial "commons/date.html" . }}
   {{ partial "commons/reading-time.html" . }}
   {{- $categories := "posts/categories.html" }}
-  {{- if templates.Exists ( printf "partials/%s" $categories ) }}
+  {{- if templates.Exists ( printf "_partials/%s" $categories ) }}
     {{ partial $categories . }}
   {{- end }}
   {{ partial "commons/share.html" . }}

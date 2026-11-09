@@ -1,7 +1,7 @@
 <div class="metas">
   {{ partial "commons/time.html" (dict "date" .Date "format" ":date_long") }}
   {{- $categories := "posts/item/categories.html" }}
-  {{ if templates.Exists ( printf "partials/%s" $categories ) }}
+  {{ if templates.Exists ( printf "_partials/%s" $categories ) }}
     {{ partial $categories . }}
   {{ end }}
 </div>

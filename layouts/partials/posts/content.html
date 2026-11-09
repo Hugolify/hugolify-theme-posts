@@ -2,7 +2,7 @@
   {{ partial "posts/featured-image.html" . }}
   {{ partial "posts/body.html" . }}
   {{- $authors := "posts/authors.html" }}
-  {{- if templates.Exists ( printf "partials/%s" $authors ) }}
+  {{- if templates.Exists ( printf "_partials/%s" $authors ) }}
     {{ partial $authors . }}
   {{- end }}
 </div>
