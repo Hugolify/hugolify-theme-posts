@@ -23,6 +23,7 @@ params:
             value: false
         icon:
           bootstrap_icons: stickies
+          hugeicons: News01
           iconoir: post
           material_icons: feed
           material_symbols: news
